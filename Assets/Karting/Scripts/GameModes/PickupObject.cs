@@ -37,7 +37,7 @@ public class PickupObjectWithPizazz : TargetObject
         {
             var vfx = Instantiate(spawnPrefabOnPickup, CollectVFXSpawnPoint.position, Quaternion.identity);
             Debug.Log(vfx.GetComponent<ParticleSystem>().isPlaying);
-            //Destroy(vfx, destroySpawnPrefabDelay);
+            Destroy(vfx, destroySpawnPrefabDelay);
         }
                
         Objective.OnUnregisterPickup(this);
