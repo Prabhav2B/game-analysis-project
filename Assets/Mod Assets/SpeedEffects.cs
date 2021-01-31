@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 using Cinemachine;
 using KartGame.KartSystems;
 using KartGame;
 using DG.Tweening;
 using UnityEngine.Rendering.PostProcessing;
+using TMPro;
 
 
 public class SpeedEffects : MonoBehaviour
@@ -18,6 +17,7 @@ public class SpeedEffects : MonoBehaviour
     [SerializeField] private float maxFOV;
     [SerializeField] private GameObject speedlines;
     [SerializeField] private PostProcessVolume volume;
+    [SerializeField] private TMP_Text speedText;
 
     private float minFOV;
     private float currFOV;
@@ -33,6 +33,7 @@ public class SpeedEffects : MonoBehaviour
         zoomedOut = false;
         speedlines.SetActive(false);
 
+        speedText.color = Color.green;
 
         if (volume.profile.TryGetSettings<ChromaticAberration>(out ca))
         {
@@ -60,10 +61,12 @@ public class SpeedEffects : MonoBehaviour
     {
         currFOV = vCam.m_Lens.FieldOfView;
 
-       DOTween.To(() => vCam.m_Lens.FieldOfView, x => vCam.m_Lens.FieldOfView = x, maxFOV, 1f);
+        DOTween.To(() => vCam.m_Lens.FieldOfView, x => vCam.m_Lens.FieldOfView = x, maxFOV, 1f);
         speedlines.SetActive(true);
 
         DOTween.To(() => ca.intensity.value, x => ca.intensity.value = x, 1f, 1f);
+
+        DOTween.To(() => speedText.color, x => speedText.color = x, new Color(255f, 0f, 0f), 1f);
     }
 
     void ZoomIn()
@@ -74,6 +77,8 @@ public class SpeedEffects : MonoBehaviour
         speedlines.SetActive(false);
 
         DOTween.To(() => ca.intensity.value, x => ca.intensity.value = x, 0f, 1f);
+
+        DOTween.To(() => speedText.color, x => speedText.color = x, Color.green, 1f);
 
     }
 
