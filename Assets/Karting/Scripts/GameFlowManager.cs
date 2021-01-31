@@ -138,7 +138,8 @@ public class GameFlowManager : MonoBehaviour
                 // See if it's time to load the end scene (after the delay)
                 if (Time.time >= m_TimeLoadEndGameScene + 6.0f)
                 {
-                    SceneManager.LoadScene(m_SceneToLoad);
+                    //SceneManager.LoadScene(m_SceneToLoad);
+                    Application.OpenURL("http://unity3d.com/");
                     gameState = GameState.Play;
                 }
             }

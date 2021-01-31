@@ -27,9 +27,9 @@ public class Speedometer : MonoBehaviour
         speed = target.velocity.magnitude / maxSpeed * 240.0f;
         if (isBland)
         {
-            if (speed > 0f)
+            if (speed > 1f)
             {
-                speedLabel.text = "Moving!";
+                speedLabel.text = "Racing!";
             }
             else
             {

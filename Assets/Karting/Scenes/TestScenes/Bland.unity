@@ -5718,12 +5718,12 @@ PrefabInstance:
     - target: {fileID: 1116075628943918194, guid: 5bce91ab2f42c924e9171c2efed10487,
         type: 3}
       propertyPath: RunningSoundMaxPitch
-      value: 1.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1116075628943918194, guid: 5bce91ab2f42c924e9171c2efed10487,
         type: 3}
       propertyPath: RunningSoundMaxVolume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1116075629333115454, guid: 5bce91ab2f42c924e9171c2efed10487,
         type: 3}
@@ -7030,7 +7030,7 @@ PrefabInstance:
     - target: {fileID: 481974245438557283, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 530548658944599566, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
@@ -7332,7 +7332,7 @@ PrefabInstance:
     - target: {fileID: 3633776071029070383, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -139.04037
       objectReference: {fileID: 0}
     - target: {fileID: 3788162873131154250, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
@@ -18789,7 +18789,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826318679}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
