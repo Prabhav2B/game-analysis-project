@@ -7032,6 +7032,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 481974245438557293, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 530548658944599566, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -14393,7 +14398,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.776148, y: 1}
+    m_SensorSize: {x: 1.7795527, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

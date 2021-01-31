@@ -139,14 +139,15 @@ public class GameFlowManager : MonoBehaviour
                 if (Time.time >= m_TimeLoadEndGameScene + 6.0f)
                 {
                     //SceneManager.LoadScene(m_SceneToLoad);
-                    if(SceneManager.GetActiveScene().buildIndex == 0)
-                        Application.OpenURL("http://unity3d.com/");
-                    else if (SceneManager.GetActiveScene().buildIndex == 1)
-                        Application.OpenURL("http://unity3d.com/");
-                    else if (SceneManager.GetActiveScene().buildIndex == 2)
-                        Application.OpenURL("http://unity3d.com/");
-                    else if (SceneManager.GetActiveScene().buildIndex == 3)
-                        Application.OpenURL("http://unity3d.com/");
+                    //if(SceneManager.GetActiveScene().buildIndex == 0)
+                        //Application.ExternalEval("window.open(\"https://forms.gle/wtgGWXcCnKSUpRFe6\",\"_blank\")");
+                    //else  
+                    //else if (SceneManager.GetActiveScene().buildIndex == 1)
+                    //    Application.OpenURL("http://unity3d.com/");
+                    //else if (SceneManager.GetActiveScene().buildIndex == 2)
+                    //    Application.OpenURL("http://unity3d.com/");
+                    //else if (SceneManager.GetActiveScene().buildIndex == 3)
+                    //    Application.OpenURL("http://unity3d.com/");
                     
                     
                     gameState = GameState.Play;
