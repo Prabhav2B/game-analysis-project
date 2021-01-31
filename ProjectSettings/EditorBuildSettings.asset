@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Karting/Scenes/IntroMenu.unity
-    guid: d29260d8d84c94bd7ac95807b3da99d4
+    path: Assets/Karting/Scenes/TestScenes/Bland.unity
+    guid: 348e66fa60b106c439a585b57c83d507
   - enabled: 1
-    path: Assets/Karting/Scenes/MainScene.unity
-    guid: 92786e23da2af4a4f8803aaf44c47121
+    path: Assets/Karting/Scenes/TestScenes/Informational.unity
+    guid: e6db56b3b338c8d4bb1b2c0848a17cb0
   - enabled: 1
-    path: Assets/Karting/Scenes/LoseScene.unity
-    guid: 9c449e01147824b419cda406398fb2e7
+    path: Assets/Karting/Scenes/TestScenes/Juicy.unity
+    guid: 534a6fe511d7a9f48b434c58c32807fd
   - enabled: 1
-    path: Assets/Karting/Scenes/WinScene.unity
-    guid: d6801f2e59f75ee4b919cf5da4e48e3b
+    path: Assets/Karting/Scenes/TestScenes/JuicyAndInformational 1.unity
+    guid: deec263eea69277439aa7c2929b88b33
   m_configObjects: {}
