@@ -3,7 +3,7 @@
 /// <summary>
 /// This class inherits from TargetObject and represents a PickupObject.
 /// </summary>
-public class PickupObjectWithPizazz : TargetObject
+public class PickupObject : TargetObject
 {
     [Header("PickupObject")]
 
@@ -35,16 +35,15 @@ public class PickupObjectWithPizazz : TargetObject
 
         if (spawnPrefabOnPickup)
         {
-            var vfx = Instantiate(spawnPrefabOnPickup, CollectVFXSpawnPoint.position, Quaternion.identity);
-            Debug.Log(vfx.GetComponent<ParticleSystem>().isPlaying);
+            var vfx = Instantiate(spawnPrefabOnPickup, CollectVFXSpawnPoint.position, this.transform.rotation);
+            //vfx.transform.rotation = Quaternion.identity;
             Destroy(vfx, destroySpawnPrefabDelay);
         }
                
         Objective.OnUnregisterPickup(this);
         TimeManager.OnAdjustTime(TimeGained);
-        Debug.Log(Ring.GetComponent<Renderer>().material);
-        Ring.GetComponent<Renderer>().material = onPickup;
-        Debug.Log(Ring.GetComponent<Renderer>().material);
+        Ring.GetComponent<Renderer>().material.color = Color.green;
+        //Ring.GetComponent<Renderer>().material = onPickup;
         Destroy(gameObject, collectDuration);
     }
     

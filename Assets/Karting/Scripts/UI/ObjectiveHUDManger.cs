@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class ObjectiveHUDManger : MonoBehaviour
 {
@@ -10,11 +13,18 @@ public class ObjectiveHUDManger : MonoBehaviour
     [Tooltip("Prefab for the primary objectives")]
     public PoolObjectDef secondaryObjectivePrefab;
 
+    [SerializeField] private bool isJuicy = true;
+    [SerializeField] private bool isInformational = true;
+    [SerializeField] private CanvasGroup checkpointCounter;
+    private TMP_Text checkpointCounterText;
+
     Dictionary<Objective, ObjectiveToast> m_ObjectivesDictionary;
 
     void Awake()
     {
         m_ObjectivesDictionary = new Dictionary<Objective, ObjectiveToast>();
+        checkpointCounterText = checkpointCounter.GetComponentInChildren<TMP_Text>();
+        checkpointCounterText.fontSize = 40f;
     }
 
     public void RegisterObjective(Objective objective)
@@ -64,6 +74,30 @@ public class ObjectiveHUDManger : MonoBehaviour
 
             RectTransform toastRectTransform = toast.GetComponent<RectTransform>();
             if (toastRectTransform != null) UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(toastRectTransform);
+
+            if(isInformational)
+                checkpointCounterText.text = updateObjective.counterText;
+            else
+                checkpointCounterText.text = "Good Job!";
+
+
+            if (isJuicy)
+            {
+                DOTween.Sequence().Append(DOTween.To(() => checkpointCounter.alpha, x => checkpointCounter.alpha = x, 1f, 1f))
+                    .Append(DOTween.To(() => checkpointCounter.alpha, x => checkpointCounter.alpha = x, 0f, .5f));
+            }
+            else
+            {
+                DOTween.Sequence().Append(DOTween.To(() => checkpointCounter.alpha, x => checkpointCounter.alpha = x, 1f, .2f))
+                   .Append(DOTween.To(() => checkpointCounter.alpha, x => checkpointCounter.alpha = x, 0f, .8f));
+            }
+
+            if (isJuicy)
+            {
+                DOTween.Sequence().Append(DOTween.To(() => checkpointCounterText.fontSize, x => checkpointCounterText.fontSize = x, 100f, 1f))
+                    .Append(DOTween.To(() => checkpointCounterText.fontSize, x => checkpointCounterText.fontSize = x, 40f, .5f));
+            }
+
             
         }
     }

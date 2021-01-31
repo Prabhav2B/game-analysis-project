@@ -1,8 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public enum GameState{Play, Won, Lost}
 
@@ -48,6 +51,8 @@ public class GameFlowManager : MonoBehaviour
     string m_SceneToLoad;
     float elapsedTimeBeforeEndScene = 0;
 
+    [SerializeField] private List<RectTransform> boardElements;
+
     void Start()
     {
         if (autoFindKarts)
@@ -67,6 +72,7 @@ public class GameFlowManager : MonoBehaviour
         DebugUtility.HandleErrorIfNullFindObject<TimeManager, GameFlowManager>(m_TimeManager, this);
 
         AudioUtility.SetMasterVolume(1);
+
 
         winDisplayMessage.gameObject.SetActive(false);
         loseDisplayMessage.gameObject.SetActive(false);
@@ -130,7 +136,7 @@ public class GameFlowManager : MonoBehaviour
                 AudioUtility.SetMasterVolume(volume);
 
                 // See if it's time to load the end scene (after the delay)
-                if (Time.time >= m_TimeLoadEndGameScene)
+                if (Time.time >= m_TimeLoadEndGameScene + 6.0f)
                 {
                     SceneManager.LoadScene(m_SceneToLoad);
                     gameState = GameState.Play;

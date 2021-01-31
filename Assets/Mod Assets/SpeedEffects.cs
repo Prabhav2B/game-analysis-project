@@ -20,7 +20,6 @@ public class SpeedEffects : MonoBehaviour
     [SerializeField] private TMP_Text speedText;
 
     private float minFOV;
-    private float currFOV;
     private float maxSpeed;
     private float speed;
     bool zoomedOut;
@@ -59,7 +58,6 @@ public class SpeedEffects : MonoBehaviour
 
     void ZoomOut()
     {
-        currFOV = vCam.m_Lens.FieldOfView;
 
         DOTween.To(() => vCam.m_Lens.FieldOfView, x => vCam.m_Lens.FieldOfView = x, maxFOV, 1f);
         speedlines.SetActive(true);
@@ -71,7 +69,6 @@ public class SpeedEffects : MonoBehaviour
 
     void ZoomIn()
     {
-        currFOV = vCam.m_Lens.FieldOfView;
 
         DOTween.To(() => vCam.m_Lens.FieldOfView, x => vCam.m_Lens.FieldOfView = x, minFOV, 1f);
         speedlines.SetActive(false);
